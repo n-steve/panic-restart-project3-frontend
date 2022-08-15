@@ -1,54 +1,100 @@
-import React, { useState } from "react";
-import { Button, Form, Segment, Rating, Icon } from "semantic-ui-react";
+// import React, { useState } from "react";
+// import { Button, Form, Segment, Rating, Icon } from "semantic-ui-react";
 
-function Create() {
-  const [like, setLike] = useState(null);
-  const [dislike, setDisLike] = useState(null);
-  function handleLike() {
-    console.log("Like");
-  }
+// function Create() {
+//   // const [storeData, setStoreData] = useState();
+//   const [addData, setAddData] = useState();
+//   const [category, setCategory] = useState(1);
+//   const [food, setFood] = useState();
+//   const [location, setLocation] = useState();
+//   const [rating, setRating] = useState(0);
+//   const [like, setLike] = useState(false);
 
-  function handleDisLike() {
-    console.log("DisLike");
-  }
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log("Submit");
-  }
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     fetch("http://localhost:9292/Food", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Accept: "application/json",
+//       },
+//       body: JSON.stringify({
+//         category: category,
+//         food_name: food,
+//         location: location,
+//         rating: rating,
+//         like: like,
+//       }),
+//     })
+//       .then((r) => r.json())
+//       .then((data) => setAddData(data));
+//   };
+//   console.log(addData);
+//   return (
+//     <Segment>
+//       <Form>
+//         <Form.Group widths="equal">
+//           <Form.Input
+//             fluid
+//             label="Category"
+//             placeholder="Category"
+//             value={category}
+//             onChange={(e) => setCategory(e.target.value)}
+//           />
 
-  function handleRating() {
-    console.log("Rating");
-  }
-  return (
-    <Segment>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group widths="equal">
-          <Form.Input fluid label="Category" placeholder="Category" />
-          <Form.Input fluid label="Food" placeholder="Food" />
-          <Form.Input fluid label="Location" placeholder="Location" />
-        </Form.Group>
-        <div>
-          <Rating
-            icon="star"
-            defaultRating={5}
-            maxRating={5}
-            size="large"
-            onSubmit={handleRating}
-          />
-        </div>
-        <div>
-          {" "}
-          <Button icon onClick={handleLike}>
-            <Icon name="thumbs up outline icon"></Icon>
-          </Button>
-          <Button icon onClick={handleDisLike}>
-            <Icon name="thumbs down outline icon"></Icon>
-          </Button>
-        </div>
-      </Form>
-      <Button type="submit">Submit</Button>{" "}
-    </Segment>
-  );
-}
+//           <Form.Input
+//             fluid
+//             label="Food"
+//             placeholder="Food"
+//             value={food}
+//             onChange={(e) => setFood(e.target.value)}
+//           />
 
-export default Create;
+//           <Form.Input
+//             fluid
+//             label="Location"
+//             placeholder="Location"
+//             value={location}
+//             onChange={(e) => setLocation(e.target.value)}
+//           />
+//         </Form.Group>
+//         <div>
+//           <Rating
+//             icon="star"
+//             onClick={(e) => setRating(e.target.value)}
+//             value={rating}
+//             defaultRating={0}
+//             maxRating={5}
+//             size="large"
+//           />
+//         </div>
+//         <div>
+//           <Button.Group>
+//             <Button icon>
+//               <Icon
+//                 name="thumbs up outline"
+//                 size="large"
+//                 onClick={(e) => setLike(true)}
+//                 value={like}
+//               />
+//             </Button>
+//             <Button.Or />
+//             <Button icon>
+//               <Icon
+//                 name="thumbs down outline"
+//                 size="large"
+//                 onClick={(e) => setLike(false)}
+//                 value={like}
+//               />
+//             </Button>
+//           </Button.Group>
+//         </div>
+//         <Button type="submit" onClick={handleSubmit}>
+//           Submit
+//         </Button>
+//       </Form>
+//     </Segment>
+//   );
+// }
+
+// export default Create;

@@ -1,61 +1,58 @@
-import React, { useState, useEffect } from "react";
-import { Table } from "semantic-ui-react";
-function Read() {
-  const [category, setCategory] = useState("");
-  const [food, setFood] = useState("");
+// import React, { useState, useEffect } from "react";
+// import { Table, Button, Rating, Icon } from "semantic-ui-react";
 
-  const [rating, setRating] = useState(0);
-  const [like, setLike] = useState(false);
+// function Read() {
+//   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:9292/Category")
-      .then((r) => r.json())
-      .then((data) => {
-        setCategory(data);
-      });
-  }, []);
+//   useEffect(() => {
+//     fetch("http://localhost:9292/Food")
+//       .then((r) => r.json())
+//       .then((database) => {
+//         const damp = database.map((i) => i);
 
-  useEffect(() => {
-    fetch("http://localhost:9292/Food")
-      .then((r) => r.json())
-      .then((data) => {
-        setFood(data);
-      });
-  }, []);
+//         setData(damp);
+//       });
+//   }, []);
+//   console.log(data);
+//   const displayEverything = data.map((i) => (
+//     <Table.Row key={i.id}>
+//       <Table.Cell>{i.food_name}</Table.Cell>
+//       <Table.Cell>{i.location}</Table.Cell>
+//       <Table.Cell>
+//         <Rating
+//           icon="star"
+//           defaultRating={i.rate.rating}
+//           maxRating={i.rate.rating}
+//         />
+//       </Table.Cell>
+//       <Table.Cell>
+//         {i.rate.like === true ? (
+//           <Icon name="thumbs up outline" />
+//         ) : (
+//           <Icon name="thumbs down outline" />
+//         )}
+//       </Table.Cell>
+//       <Table.Cell>
+//         <Button>Edit</Button>
+//         <Button>Delete</Button>
+//       </Table.Cell>
+//     </Table.Row>
+//   ));
 
-  const displayCategory = category.map((i) => (
-    <Table.Row key={i.id} category={i.category}>
-      <Table.Cell>{i.category}</Table.Cell>
-      <Table.Cell>{i.category}</Table.Cell>
-      <Table.Cell>{i.category}</Table.Cell>
-      <Table.Cell>{i.category}</Table.Cell>
-      <Table.Cell>{i.category}</Table.Cell>
-    </Table.Row>
-  ));
+//   return (
+//     <Table widths="equal">
+//       <Table.Header>
+//         <Table.Row>
+//           <Table.HeaderCell>Food</Table.HeaderCell>
+//           <Table.HeaderCell>Location</Table.HeaderCell>
+//           <Table.HeaderCell>Rating</Table.HeaderCell>
+//           <Table.HeaderCell>Like</Table.HeaderCell>
+//           <Table.HeaderCell>Edit</Table.HeaderCell>
+//         </Table.Row>
+//       </Table.Header>
+//       <Table.Body>{displayEverything}</Table.Body>
+//     </Table>
+//   );
+// }
 
-  //   const displayFood = food.map((i) => (
-  //     <Table.Body>
-  //       <Table.Row>
-  //         <Table.Cell>{i.food_name}</Table.Cell>
-  //       </Table.Row>
-  //     </Table.Body>
-  //   ));
-  //   console.log(displayFood);
-  return (
-    <Table>
-      {" "}
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell>Category</Table.HeaderCell>
-          <Table.HeaderCell>Category</Table.HeaderCell>
-          <Table.HeaderCell>Category</Table.HeaderCell>
-          <Table.HeaderCell>Category</Table.HeaderCell>
-          <Table.HeaderCell>Category</Table.HeaderCell>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>{displayCategory}</Table.Body>
-    </Table>
-  );
-}
-
-export default Read;
+// export default Read;

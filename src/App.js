@@ -1,19 +1,25 @@
 import "./App.css";
 import React from "react";
-import Create from "./Create";
-import Read from "./Read";
+import Update from "./Update";
+import Post from "./Post";
+import NewUpdate from "./newUpdate";
+// import Create from "./Create";
+// import Read from "./Read";
+// import Create from "./Create";
 function App() {
   return (
     <div className="App">
-      <div>Food List Table </div>
-      <Read />
-      {/* <Create /> */}
-      <div>Test</div>
+      <Update />
+      <Post />
     </div>
   );
 }
 
 export default App;
+
+/* <Read />
+<Create /> */
+
 // const [food, setFood] = useState();
 // const [category, setCategory] = useState();
 // const [rating, setRating] = useState();
